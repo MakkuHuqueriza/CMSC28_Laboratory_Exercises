@@ -70,6 +70,7 @@ public:
 
     // Method to output the results
     void getOutput() {
+        std::cout << "Calculations/Reults:" << getLargest() << std::endl;
         std::cout << "Largest: " << getLargest() << std::endl;
         std::cout << "Smallest: " << getSmallest() << std::endl;
         std::cout << "Average: " << getAverage() << std::endl;
