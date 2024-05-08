@@ -26,7 +26,7 @@ void progdescription(){
     std::cout << "\n=================================================================================================================" << std::endl;
     std::cout << "                              Boredom Reliever Problem - Programming Exercises 04"<< std::endl;;
     std::cout << "                                       Created by Mark Jaily H. Pena" << std::endl;
-    std::cout << "                               Date done: 4/24/2024       Subject: CMSC 57" << std::endl << std::endl;
+    std::cout << "                               Date done: 4/24/2024       Subject: CMSC 28" << std::endl << std::endl;
     std::cout << "This program asks the user to input an integer and convert this number to its binary equivalent." << std::endl;
     std::cout << "=================================================================================================================" << std::endl << std::endl; 
 }
