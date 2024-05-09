@@ -1,12 +1,12 @@
 #include <iostream>
 #include <cmath>
 
-class DataAnalyzer {
+class Statistics {
 private:
     int nums[10];   // Array to store integers
     int size;       // Size of the array
 public:
-    DataAnalyzer() {
+    Statistics() {
         size = 0;   // Initialize size to 0
     }
 
@@ -80,7 +80,7 @@ public:
 };
 
 int main() {
-    DataAnalyzer analyzer; // Create an instance of the DataAnalyzer class
+    Statistics analyzer; // Create an instance of the Statistics class
     analyzer.setData(); // Call the setData() method to input data from the user
     analyzer.getOutput(); // Call the getOutput() method to display the analysis results
     return 0;
