@@ -29,7 +29,7 @@ int main() {
 
     return 0;
 }
-
+    
 void setData(int nums[], int& size) {
     std::cout << "\n=================================================================================================================" << std::endl;
     std::cout << "                                           Programming Exercises 05"<< std::endl;;
@@ -52,7 +52,7 @@ void setData(int nums[], int& size) {
 // Function to find the largest element in the array
 int getLargest(int nums[], int size) {
     int largest = nums[0];
-    for (int i = 1; i < size; i++) { // Compare each elements to check which is larger and store it in the largest variable
+    for (int i {1}; i < size; i++) { // Compare each elements to check which is larger and store it in the largest variable
         if (nums[i] > largest) {
             largest = nums[i];
         }
@@ -63,7 +63,7 @@ int getLargest(int nums[], int size) {
 // Function to find the smallest element in the array
 int getSmallest(int nums[], int size) {
     int smallest = nums[0];
-    for (int i = 1; i < size; i++) { // Compare each elements to check which is smaller and store it in the smallest variable
+    for (int i {1}; i < size; i++) { // Compare each elements to check which is smaller and store it in the smallest variable
         if (nums[i] < smallest) {
             smallest = nums[i];
         }
@@ -74,7 +74,7 @@ int getSmallest(int nums[], int size) {
 // Function to calculate the average of the elements in the array
 double getAverage(int nums[], int size) {
     double sum = 0;
-    for (int i = 0; i < size; i++) {
+    for (int i {0}; i < size; i++) {
         sum += nums[i];
     }
     return sum / size; // Summation of all the elements divided by the number of elements
@@ -84,7 +84,7 @@ double getAverage(int nums[], int size) {
 double getVariance(int nums[], int size) {
     double avg = getAverage(nums, size);
     double variance = 0;
-    for (int i = 0; i < size; i++) {
+    for (int i {0}; i < size; i++) {
         variance += pow((nums[i] - avg), 2); // Summation of the squared difference of each element and the average
     }
     return variance / size;
