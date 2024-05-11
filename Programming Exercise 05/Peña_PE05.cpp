@@ -132,6 +132,15 @@ double getStandardDeviation(int nums[], int size) {
     return sqrt(getVariance(nums, size)); 
 }
 
+/**
+ * Print the results of each calculation
+ * 
+ * @param {int} largest - contains the largest value in the array
+ * @param {int} smallest - contains the smallest value in the array
+ * @param {double} average - contains the average of the array
+ * @param {double} variance - contains the variance of the array
+ * @param {double} standardDeviation - contains the standard deviation of the array
+ */
 // Function to output the results
 void getOutput(int largest, int smallest, double average, double variance, double standardDeviation) {
     std::cout << std::endl;
