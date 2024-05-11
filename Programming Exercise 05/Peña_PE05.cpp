@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <cmath>
+#define MAX 10
 
 // Function prototypes
 void setData(int nums[], int& size);
@@ -12,24 +13,30 @@ double getVariance(int nums[], int size);
 double getStandardDeviation(int nums[], int size);
 void getOutput(int largest, int smallest, double average, double variance, double standardDeviation);
 
-int main() {
-    int nums[10];   // Array to store integers
-    int size = 0;   // Size of the array
-    setData(nums, size); // Call the setData() function to input data from the user
 
-    // Calculate statistical values
+//Main function
+int main() {
+    int nums[MAX];   
+    int size = 0;   
+    setData(nums, size);
+   
     int largest = getLargest(nums, size);
     int smallest = getSmallest(nums, size);
     double average = getAverage(nums, size);
     double variance = getVariance(nums, size);
     double standardDeviation = getStandardDeviation(nums, size);
 
-    // Call the getOutput() function to display the analysis results
     getOutput(largest, smallest, average, variance, standardDeviation);
 
     return 0;
 }
-    
+
+/**
+ * Ask the user for inputs and store them in an array.
+ * 
+ * @param {Array<int>} nums - the array where the data will be stored
+ * @param {int&} size - a reference variable to determine the size of the array 
+ */
 void setData(int nums[], int& size) {
     std::cout << "\n=================================================================================================================" << std::endl;
     std::cout << "                                           Programming Exercises 05"<< std::endl;;
@@ -43,16 +50,22 @@ void setData(int nums[], int& size) {
     int input;
     do {
         std::cin >> input;
-        if (input != 0 && size < 10) {
-            nums[size++] = input;   // Store input in array and increment size
+        if (input != 0 && size < MAX) {
+            nums[size++] = input;   
         }
-    } while (input != 0 && size < 10);   // Repeat until 0 is entered or array is full
+    } while (input != 0 && size < MAX);   
 }
 
-// Function to find the largest element in the array
+/**
+ * Find the largest element in the array
+ * 
+ * @param {Array<int>} nums - the array where the data are stored
+ * @param {int} size - a variable to determine the size of the array 
+ * @return {int} The function returns the largest element in the array
+ */
 int getLargest(int nums[], int size) {
     int largest = nums[0];
-    for (int i {1}; i < size; i++) { // Compare each elements to check which is larger and store it in the largest variable
+    for (int i {1}; i < size; i++) {
         if (nums[i] > largest) {
             largest = nums[i];
         }
@@ -60,39 +73,63 @@ int getLargest(int nums[], int size) {
     return largest;
 }
 
-// Function to find the smallest element in the array
+/**
+ * Find the smallest element in the array
+ * 
+ * @param {Array<int>} nums - the array where the data are stored
+ * @param {int} size - a variable to determine the size of the array 
+ * @return {int} The function returns the smallest element in the array
+ */
 int getSmallest(int nums[], int size) {
     int smallest = nums[0];
-    for (int i {1}; i < size; i++) { // Compare each elements to check which is smaller and store it in the smallest variable
+    for (int i {1}; i < size; i++) { 
         if (nums[i] < smallest) {
             smallest = nums[i];
         }
     }
     return smallest;
 }
-
-// Function to calculate the average of the elements in the array
+/**
+ * Calculate the average of the elements in the array
+ * 
+ * @param {Array<int>} nums - the array where the data are stored
+ * @param {int} size - a variable to determine the size of the array 
+ * @return {double} The function returns the summation of all the elements divided by the number of elements
+ */
 double getAverage(int nums[], int size) {
     double sum = 0;
     for (int i {0}; i < size; i++) {
         sum += nums[i];
     }
-    return sum / size; // Summation of all the elements divided by the number of elements
+    return sum / size; 
 }
 
-// Function to calculate the variance of the elements in the array
+/**
+ * Calculate the variance of the elements in the array by getting the summation of the squared difference of 
+ * each element and the average all over the size or the number of elements
+ * 
+ * @param {Array<int>} nums - the array where the data are stored
+ * @param {int} size - a variable to determine the size of the array 
+ * @return {double} The function returns variance of the array
+ */
 double getVariance(int nums[], int size) {
     double avg = getAverage(nums, size);
     double variance = 0;
     for (int i {0}; i < size; i++) {
-        variance += pow((nums[i] - avg), 2); // Summation of the squared difference of each element and the average
+        variance += pow((nums[i] - avg), 2);
     }
     return variance / size;
 }
-
-// Function to calculate the standard deviation of the elements in the array
+/**
+ * Calculate the standard deviation of the elements in the array by getting the square root of the variance
+ * of the array
+ * 
+ * @param {Array<int>} nums - the array where the data are stored
+ * @param {int} size - a variable to determine the size of the array 
+ * @return {double} The function returns the square root of the variance of the array
+ */
 double getStandardDeviation(int nums[], int size) {
-    return sqrt(getVariance(nums, size)); // Square root ofthe variance is equal to standard deviation
+    return sqrt(getVariance(nums, size)); 
 }
 
 // Function to output the results
