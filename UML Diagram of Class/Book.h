@@ -11,7 +11,7 @@ class Book {
 
     public: 
         //Constructor
-        Book(std::string title, std::string author, std::string isbn, std::string publisher )
+        Book(std::string title, std::string author, std::string isbn, std::string publisher)
         : Title(title), Author(author), ISBN(isbn), Publisher(publisher){}   
 
         //Getters
