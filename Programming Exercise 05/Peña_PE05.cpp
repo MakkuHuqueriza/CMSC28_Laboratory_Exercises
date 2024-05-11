@@ -141,7 +141,6 @@ double getStandardDeviation(int nums[], int size) {
  * @param {double} variance - contains the variance of the array
  * @param {double} standardDeviation - contains the standard deviation of the array
  */
-// Function to output the results
 void getOutput(int largest, int smallest, double average, double variance, double standardDeviation) {
     std::cout << std::endl;
     std::cout << "Calculations/Results:" << std::endl;
