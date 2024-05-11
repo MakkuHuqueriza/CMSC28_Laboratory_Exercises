@@ -1,4 +1,5 @@
 #include <iostream> // Include necessary header for input and output operations
+#include <string>
 
 class Book { // Define a class named Book
 
