@@ -13,7 +13,7 @@ using std::list;
  * The Movie class inherits privately from the Person class.
  * It represents a movie with its directors, actors, title, synopsis, MPAA rating, and genres.
  */
-class Movie : private Person{
+class Movie {
 
     private:
         list<Person> Directors;  ///< List of directors of the movie
