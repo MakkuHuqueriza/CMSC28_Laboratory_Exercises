@@ -12,12 +12,12 @@ class Person{
     public:
         Person(){}
 
-        string getFname(){ return Fname; }
-        string getLname(){ return Lname; }
-        char getGender(){ return Gender; }
+        const string& getFname() const { return Fname; }
+        const string& getLname() const { return Lname; }
+        const char& getGender() const { return Gender; }
 
-        void setFname(string fname){ Fname = fname; }
-        void setLname(string lname){ Lname = lname; }
-        void setGender(char gender){ Gender = gender; }
+        void setFname(const string& fname){ Fname = fname; }
+        void setLname(const string& lname){ Lname = lname; }
+        void setGender(const char& gender){ Gender = gender; }
 
 };

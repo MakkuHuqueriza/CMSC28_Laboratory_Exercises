@@ -1,115 +1,157 @@
 #include <iostream>
+#include <list>
 #include "Movie.h"
 
 using std::string;
+using std::list;
+using std::cin;
+using std::cout;
+using std::getline;
+using std::endl;
+
 
 int main(){
     Movie movie;
+
+    string title, synopsis, mpaa_rating, genre;
     
-    string title;
-    string synopsis;
-    string mpaa_rating;
-    string fname;
-    string lname;
+    string fname, lname;
     char gender;
-    string genre;
-    
-    int numofDirector;
-    int nummofGenres;
-    int numofActors;
-    
-    std::cout << "Input title of the movie: ";
-    std::getline(std::cin, title);
+
+    cout << "Enter the title of the movie: ";
+    getline(cin, title);
     movie.setTitle(title);
 
-    std::cout << "Input the synopsis of the movie: ";
-    std::getline(std::cin, synopsis);
+    cout << "Enter the synopsis of the movie: ";
+    getline(cin, synopsis);
     movie.setSynopsis(synopsis);
 
-    std::cout << "Input MPAA Rating of the movie: ";
-    std::getline(std::cin, mpaa_rating);
+    cout << "Enter the MPAA Rating of the movie: ";
+    getline(cin, mpaa_rating);
     movie.setMPAA_rating(mpaa_rating);
 
-    std::cout << "How many genres in the movie: ";
-    std::cin >> nummofGenres;
+    list<string> genres;
 
-    string genres[nummofGenres];
+    int choice;
 
-    for(int i = 0; i < nummofGenres; i++){
-        std::cout << "Input genre of the movie: ";
-        std::cin >> genres[i];
+    do{
+        cout << "What is the genre of the movie: ";
+        getline(cin, genre);
+        genres.push_back(genre);
+
+        cout << "\nAre there any more?\n[1] Yes\n[0] No\nChoice: ";
+        cin >> choice;
+        
+        cin.ignore(); 
+
+
+        if (!choice) {
+            break;
+        }
     }
+    while(true);
 
     movie.setGenres(genres);
 
-    std::cout << "How many director/s are there? ";
-    std::cin >> numofDirector;
+    Person person;
 
-    Person directors[numofDirector];
+    list<Person> directors;
 
-    for(int i = 0; i < numofDirector; i++){
+    do{
 
-        std::cout << "Input full name of the director: ";
-        std::cin >> fname;
-        std::cin >> lname;
+        cout << "What is the first name of the director: ";
+        getline(cin, fname);
+
+        cout << "What is the last name of the director: ";
+        cin >> lname;
         
-        std::cout << "Input gender of the director: ";
-        std::cin >> gender;
+        cout << "What is the gender of the director (M or F): ";
+        cin >> gender;
 
-        directors[i].setFname(fname);
-        directors[i].setLname(lname);
-        directors[i].setGender(gender);
-    }
+        person.setFname(fname);
+        person.setLname(lname);
+        person.setGender(gender);
+
+        directors.push_back(person);
+
+        cout << "\nAre there any more?\n[1] Yes\n[0] No\nChoice: ";
+        cin >> choice;
+        
+        cin.ignore(); 
+
+
+        if (!choice) {
+            break;
+        }
+
+    }while(true);
 
     movie.setDirectors(directors);
 
-    std::cout << "How many actor/s are there? ";
-    std::cin >> numofActors;
+    list<Person> actors;
 
-    Person actors[numofActors];
+    do{
 
-    for(int i = 0; i < numofActors; i++){
+        cout << "What is the first name of the actor/actress: ";
+        getline(cin, fname);
+
+        cout << "What is the last name of the actor/actress: ";
+        cin >> lname;
         
-        std::cout << "Input full name of the actor/actress: ";
-        std::cin >> fname;
-        std::cin >> lname;
-        
-        std::cout << "Input gender of the actor/actress: ";
-        std::cin >> gender;
+        cout << "What is the gender of the actor/actress(M or F): ";
+        cin >> gender;
 
-        actors[i].setFname(fname);
-        actors[i].setLname(lname);
-        actors[i].setGender(gender);
-    }
+        person.setFname(fname);
+        person.setLname(lname);
+        person.setGender(gender);
+
+        actors.push_back(person);
+
+        cout << "\nAre there any more?\n[1] Yes\n[0] No\nChoice: ";
+        cin >> choice;
+        
+        cin.ignore(); 
+
+
+        if (!choice) {
+            break;
+        }
+
+    }while(true);
 
     movie.setActors(actors);
-    
-    std::cout << "Title: " << movie.getTitle() << std::endl;
-    std::cout << "Synopsis: " << movie.getSynopsis() << std::endl;
-    std::cout << "MPAA Rating: " << movie.getMPAA_rating() << std::endl;
+    cout << "========================================================================" << endl;
+    cout << "\nTitle: " << movie.getTitle() << endl;
+    cout << "\nSynopsis: " << movie.getSynopsis() << endl;
+    cout << "\nMPAA Rating: " << movie.getMPAA_rating() << endl;
 
-    Person* displaydirectors = movie.getDirectors();
+    list<string> displaygenres = movie.getGenres();
 
-    std::cout << "Directors:" << std::endl;
-    for(int i = 0; i < numofDirector; i++){
-        std::cout << "Full name: "<< displaydirectors[i].getFname() << " " << displaydirectors[i].getLname() << std::endl;
-        std::cout << "Gender: " << displaydirectors[i].getGender() << std::endl;
-        std::cout << std::endl;
+    cout << "\nGenres:";
+    for(string genre : displaygenres){
+
+        cout << ", " << genre;
+    }
+
+    list<Person> displaydirectors = movie.getDirectors();
+
+    cout << "\n\nDirectors:" << endl;
+    for(Person director : displaydirectors){
+
+        cout << "Full name: "<< director.getFname() << " " << director.getLname() << endl;
+        cout << "Gender: " << director.getGender() << endl;
+        cout << endl;
     }
     
-    Person* displayactors = movie.getActors();
+    list<Person> displayactors = movie.getActors();
 
-    std::cout << "Actors:" << std::endl;
-    for(int i = 0; i < numofActors; i++){
-        std::cout << "Full name: "<< displayactors[i].getFname() << " " << displayactors[i].getLname() << std::endl;
-        std::cout << "Gender: " << displayactors[i].getGender() << std::endl;
-        std::cout << std::endl;
+    cout << "Actors:" << endl;
+    for(Person actor : displayactors ){
+
+        cout << "Full name: "<< actor.getFname() << " " << actor.getLname() << endl;
+        cout << "Gender: " << actor.getGender() << endl;
+        cout << endl;
     }
 
-    string* displaygenres = movie.getGenres();
 
-    std::cout << "Genres:";
-    for(int i = 0; i < nummofGenres; i++){
-        std::cout << " " << displaygenres[i];
-    }
 }

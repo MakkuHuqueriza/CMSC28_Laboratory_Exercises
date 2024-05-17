@@ -1,34 +1,36 @@
 #include <iostream>
 #include <string>
+#include <list>
 #include "Person.h"
 
 using std::string;
+using std::list;
 
-class Movie : public Person{
+class Movie : private Person{
 
     private:
-        Person* Directors;
-        Person* Actors;
+        list<Person> Directors;
+        list<Person> Actors;
         string Title;
         string Synopsis;
         string MPAA_rating;
-        string* Genres;
+        list<string> Genres;
 
     public:
         Movie(){}
 
-        Person* getDirectors(){ return Directors; }
-        Person* getActors(){ return Actors; }
-        string getTitle(){ return Title; }
-        string getSynopsis(){ return Synopsis; }
-        string getMPAA_rating(){ return MPAA_rating; }
-        string* getGenres(){ return Genres; }
+        const list<Person>& getDirectors() const { return Directors; }
+        const list<Person>& getActors() const { return Actors; }
+        const string& getTitle() const { return Title; }
+        const string& getSynopsis() const { return Synopsis; }
+        const string& getMPAA_rating() const { return MPAA_rating; }
+        const list<string>& getGenres()const { return Genres; }
 
-        void setDirectors(Person* directors){ Directors = directors; }
-        void setActors(Person* actors){ Actors = actors; }
+        void setDirectors(const list<Person>& directors) { Directors = directors; }
+        void setActors(const list<Person>& actors){ Actors = actors; }
         void setTitle(const string& title){ Title = title; }
         void setSynopsis(const string& synopsis){ Synopsis = synopsis; }
         void setMPAA_rating(const string& mpaa_rating){ MPAA_rating = mpaa_rating; }
-        void setGenres(string* genres){ Genres = genres; }
+        void setGenres(const list<string>& genres){ Genres = genres; }
 
 };
