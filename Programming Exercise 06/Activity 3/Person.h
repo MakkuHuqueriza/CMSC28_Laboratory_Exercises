@@ -10,7 +10,7 @@ using std::string;
  * The Person class represents a person with first name, last name, and gender.
  */
 class Person{
-    protected:
+    private:
         string Fname;  ///< First name of the person
         string Lname;  ///< Last name of the person
         char Gender;   ///< Gender of the person

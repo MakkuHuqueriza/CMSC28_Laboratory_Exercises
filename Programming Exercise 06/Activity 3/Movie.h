@@ -9,8 +9,6 @@ using std::list;
 /**
  * @class Movie
  * A class that represents a movie.
- * 
- * The Movie class inherits privately from the Person class.
  * It represents a movie with its directors, actors, title, synopsis, MPAA rating, and genres.
  */
 class Movie {
