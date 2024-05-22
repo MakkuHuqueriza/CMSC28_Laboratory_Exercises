@@ -16,33 +16,33 @@ int main() {
     cout << "                                       Created by Mark Jaily H. Pena" << endl;
     cout << "                               Date done: 5/22/2024       Subject: CMSC 28" << endl << endl;
     cout << "Design a class hierarchy for managing products in a store's inventory, focusing on inheritance and encapsulation." << endl; 
-    cout << "=================================================================================================================" << std::endl << std::endl; 
+    cout << "=================================================================================================================" << endl << endl; 
     
     // Variables to hold user input
-    std::string name, brand, description, category, size, color, material, model, technicalSpecifications;
+    string name, brand, description, category, size, color, material, model, technicalSpecifications;
     double price;
     int quantity, warranty;
 
-    std::cout << "Enter details for the clothing item:\n";
-    std::cout << "Name: ";
-    std::getline(std::cin, name);
-    std::cout << "Brand: ";
-    std::getline(std::cin, brand);
-    std::cout << "Price: ";
-    std::cin >> price;
-    std::cout << "Quantity: ";
-    std::cin >> quantity;
-    std::cin.ignore();  // clear the newline character from the input buffer
-    std::cout << "Description: ";
-    std::getline(std::cin, description);
-    std::cout << "Category: ";
-    std::getline(std::cin, category);
-    std::cout << "Size: ";
-    std::getline(std::cin, size);
-    std::cout << "Color: ";
-    std::getline(std::cin, color);
-    std::cout << "Material: ";
-    std::getline(std::cin, material);
+    cout << "Enter details for the clothing item:\n";
+    cout << "Name: ";
+    getline(cin, name);
+    cout << "Brand: ";
+    getline(cin, brand);
+    cout << "Price: ";
+    cin >> price;
+    cout << "Quantity: ";
+    cin >> quantity;
+    cin.ignore();  // clear the newline character from the input buffer
+    cout << "Description: ";
+    getline(cin, description);
+    cout << "Category: ";
+    getline(cin, category);
+    cout << "Size: ";
+    getline(cin, size);
+    cout << "Color: ";
+    getline(cin, color);
+    cout << "Material: ";
+    getline(cin, material);
 
     // Create a Clothing object
     Clothing shirt;
@@ -58,27 +58,27 @@ int main() {
     shirt.setColor(color);
     shirt.setMaterial(material);
 
-    std::cout << "\nEnter details for the electronic item:\n";
-    std::cout << "Name: ";
-    std::getline(std::cin, name);
-    std::cout << "Brand: ";
-    std::getline(std::cin, brand);
-    std::cout << "Price: ";
-    std::cin >> price;
-    std::cout << "Quantity: ";
-    std::cin >> quantity;
-    std::cin.ignore();  // clear the newline character from the input buffer
-    std::cout << "Description: ";
-    std::getline(std::cin, description);
-    std::cout << "Category: ";
-    std::getline(std::cin, category);
-    std::cout << "Model: ";
-    std::getline(std::cin, model);
-    std::cout << "Warranty: ";
-    std::cin >> warranty;
-    std::cin.ignore();  // clear the newline character from the input buffer
-    std::cout << "Technical Specifications: ";
-    std::getline(std::cin, technicalSpecifications);
+    cout << "\nEnter details for the electronic item:\n";
+    cout << "Name: ";
+    getline(cin, name);
+    cout << "Brand: ";
+    getline(cin, brand);
+    cout << "Price: ";
+    cin >> price;
+    cout << "Quantity: ";
+    cin >> quantity;
+    cin.ignore();  // clear the newline character from the input buffer
+    cout << "Description: ";
+    getline(cin, description);
+    cout << "Category: ";
+    getline(cin, category);
+    cout << "Model: ";
+    getline(cin, model);
+    cout << "Warranty: ";
+    cin >> warranty;
+    cin.ignore();  // clear the newline character from the input buffer
+    cout << "Technical Specifications: ";
+    getline(cin, technicalSpecifications);
 
     // Create an Electronics object
     Electronics phone;
