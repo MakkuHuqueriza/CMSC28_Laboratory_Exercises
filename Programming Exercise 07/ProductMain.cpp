@@ -23,7 +23,6 @@ int main() {
     double price;
     int quantity, warranty;
 
-    
     std::cout << "Enter details for the clothing item:\n";
     std::cout << "Name: ";
     std::getline(std::cin, name);
@@ -47,6 +46,8 @@ int main() {
 
     // Create a Clothing object
     Clothing shirt;
+
+    // Set the values of the object
     shirt.setName(name);
     shirt.setBrand(brand);
     shirt.setPrice(price);
@@ -81,6 +82,8 @@ int main() {
 
     // Create an Electronics object
     Electronics phone;
+
+    // Set the values of the object
     phone.setName(name);
     phone.setBrand(brand);
     phone.setPrice(price);
