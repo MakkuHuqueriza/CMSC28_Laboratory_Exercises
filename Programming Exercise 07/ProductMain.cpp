@@ -23,7 +23,7 @@ int main() {
     double price;
     int quantity, warranty;
 
-    // Create a Clothing object
+    
     std::cout << "Enter details for the clothing item:\n";
     std::cout << "Name: ";
     std::getline(std::cin, name);
@@ -45,6 +45,7 @@ int main() {
     std::cout << "Material: ";
     std::getline(std::cin, material);
 
+    // Create a Clothing object
     Clothing shirt;
     shirt.setName(name);
     shirt.setBrand(brand);
@@ -56,7 +57,6 @@ int main() {
     shirt.setColor(color);
     shirt.setMaterial(material);
 
-    // Create an Electronics object
     std::cout << "\nEnter details for the electronic item:\n";
     std::cout << "Name: ";
     std::getline(std::cin, name);
@@ -79,6 +79,7 @@ int main() {
     std::cout << "Technical Specifications: ";
     std::getline(std::cin, technicalSpecifications);
 
+    // Create an Electronics object
     Electronics phone;
     phone.setName(name);
     phone.setBrand(brand);
