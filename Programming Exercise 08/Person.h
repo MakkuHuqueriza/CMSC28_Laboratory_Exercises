@@ -6,39 +6,32 @@
 
 using std::string;
 
-class Person{
+// Class definition for a Person
+class Person {
     private:
-        string Fname;  
-        string Lname;  
-        char Gender;   
+        string Fname;  // First name of the person
+        string Lname;  // Last name of the person
+        char Gender;   // Gender of the person
 
     public:
+        string EmailAdd;  // Email address of the person
+        string CpNumber;  // Contact number of the person
 
-        string EmailAdd;
-        string CpNumber;
+        // Default constructor
+        Person() {}
 
-        Person(){}
-
+        // Getters
         const string& getFname() const { return Fname; }
-
         const string& getLname() const { return Lname; }
-
         const char getGender() const { return Gender; }
-
         const string& getEmailAdd() const { return EmailAdd; }
-
         const string& getCpNumber() const { return CpNumber; }
 
-        
-        void setFname(const string& fname){ Fname = fname; }
-
-        void setLname(const string& lname){ Lname = lname; }
-
-        void setGender(const char gender){ Gender = gender; }
-
-        void setEmailAdd(const string& email){ EmailAdd = email; }
-
-        void setCpNumber(const string& cp){ CpNumber = cp; }
+        // Setters
+        void setFname(const string& fname) { Fname = fname; }
+        void setLname(const string& lname) { Lname = lname; }
+        void setGender(const char gender) { Gender = gender; }
+        void setEmailAdd(const string& email) { EmailAdd = email; }
+        void setCpNumber(const string& cp) { CpNumber = cp; }
 };
-
 #endif
