@@ -12,7 +12,7 @@ int main() {
 
     // Display program details
     cout << "\n=================================================================================================================" << endl;
-    cout << "                              OOP 3 Inheritance and Encapsulation - Programming Exercises 06"<< endl;;
+    cout << "                              OOP 3 Inheritance and Encapsulation - Programming Exercises 07"<< endl;;
     cout << "                                       Created by Mark Jaily H. Pena" << endl;
     cout << "                               Date done: 5/22/2024       Subject: CMSC 28" << endl << endl;
     cout << "Design a class hierarchy for managing products in a store's inventory, focusing on inheritance and encapsulation." << endl; 
